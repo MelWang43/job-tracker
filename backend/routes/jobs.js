@@ -11,8 +11,8 @@ router.post("/", async (req, res) => {
         .from("jobs")
         .insert({
             title: jobTitle,
-            companyName: companyName,
-            status: "Applied",
+            company_name: companyName,
+            status: "applied",
         })
         .select();
 
