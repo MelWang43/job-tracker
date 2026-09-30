@@ -2,7 +2,7 @@
 
 A basic job tracking application connected to a Supabase database. Users can add new job applications, update their status, and delete jobs, with all entries displayed in a clean, easy-to-use list.
 
-This project was made to introduce myself to connecting databases to a front end application, focussing on CRUD design.
+This project was made to introduce myself to connecting databases to a front end application and a refresher for backend development before delving into more complex projects
 
 
 # React + Vite
