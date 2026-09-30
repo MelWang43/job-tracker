@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import '../css/JobEntry.css'
 function JobEntry({job, onDelete}){
     const [hasSpawned, setHasSpawned] = useState(false);
+    const [status, setStatus] = useState(job.status);
     
     useEffect(() => {
         if(!hasSpawned){
@@ -25,6 +26,27 @@ function JobEntry({job, onDelete}){
         const data = await response.json();
         console.log("Deleted", data);
         onDelete();
+    }
+
+    async function onStatusChange(e){
+        const newStatus = e.target.value;
+        setStatus(newStatus)
+
+        const response = await fetch("http://localhost:3000/api/jobs/" + job.id, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                jobTitle: job.jobTitle,
+                companyName: job.companyName,
+                status: newStatus
+                
+            })
+        });
+
+        const data = await response.json();
+        console.log("Updated", data)
     }
 
     function getRelativeTime(){
@@ -65,9 +87,18 @@ function JobEntry({job, onDelete}){
         <div className={`job-entry ${hasSpawned ? 'spawned' : ''}`}>
             <h3>{job.title}</h3>
             <span>{job.company_name}</span>
-            
-            <p>Status: <span className={`status-text ${job.status}`}>{job.status.charAt(0).toUpperCase() + job.status.slice(1)}</span></p>
-
+            <p></p>
+            {/* <p>Status: <span className={`status-text ${status}`}>{status.charAt(0).toUpperCase() + status.slice(1)}</span></p> */}
+            <div className="status-container">
+                <div className={`status-text ${status}`}></div>
+                <label for="status-list" >Status: </label>
+                <select id="status-list" name="status" value={status} onChange={onStatusChange} className="status-select">
+                    <option value="applied" className='applied'>Applied</option>
+                    <option value="reviewing">Reviewing</option>
+                    <option value="rejected">Rejected</option>
+                    <option value="accepted">Accepted</option>
+                </select>
+            </div>
             <button className='top-right-overlay' onClick={handleDeleteClicked}>X</button>
 
             <div className='bottom-right-overlay'>

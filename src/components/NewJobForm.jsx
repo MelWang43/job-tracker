@@ -7,6 +7,8 @@ function NewJobForm({isActive, onCancel, onAdd}){
     const [companyName, setCompanyName] = useState("");
     const [isCompanyValid, setIsCompanyValid] = useState(true);
 
+    const [hasSubmitted, setHasSubmitted] = useState(false);
+
     function handleJobTitleChanged(e){
         const raw = e.target.value;
         setJobTitle(raw);
@@ -63,6 +65,9 @@ function NewJobForm({isActive, onCancel, onAdd}){
         if(!validateFields()){
             return;
         }
+
+        if(hasSubmitted) return;
+        setHasSubmitted(true);
         const response = await fetch("http://localhost:3000/api/jobs", {
             method: "POST",
             headers: {
@@ -76,8 +81,10 @@ function NewJobForm({isActive, onCancel, onAdd}){
 
         const data = await response.json();
         console.log(data);
+        
         onAdd();
         Close();
+        setHasSubmitted(false);
     }
     
     return <>

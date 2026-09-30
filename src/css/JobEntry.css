@@ -21,17 +21,39 @@
     font-size: 2rem;
 }
 
+.status-container{
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+.status-select{
+    font-size: 0.9rem;
+    padding: 0.2rem 0.2rem;
+    border-radius: 0.5rem;
+}
+
+.status-select:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.status-text{
+    width: 12px;
+    height: 12px;
+    border-radius: 4rem;
+}
+
 .status-text.applied{
-    color: var(--yellow);
+    background-color: var(--yellow);
 }
 .status-text.reviewing{
-    color: var(--orange);
+    background-color: var(--orange);
 }
 .status-text.rejected{
-    color: var(--red);
+    background-color: var(--red);
 }
 .status-text.accepted{
-    color: var(--green);
+    background-color: var(--green);
 }
 
 .top-right-overlay{
