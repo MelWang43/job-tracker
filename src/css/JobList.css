@@ -1,6 +1,6 @@
 .job-list{
     background-color: var(--social-bg);
-    height: 65vh;
+    height: 85vh;
     overflow-y: auto;
     padding: 0.2rem 1rem;
 

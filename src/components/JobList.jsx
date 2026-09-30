@@ -18,8 +18,8 @@ function JobList(){
             console.error("Failed to load jobs");
             return;
         }
-        setJobs([])
         const data = await response.json();
+        setJobs([])
         setJobs(data);
         console.log(data);
     }

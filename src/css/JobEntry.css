@@ -34,10 +34,17 @@
     color: var(--green);
 }
 
-.btn-overlay{
+.top-right-overlay{
     position: absolute;
     right: 0;
     bottom: 1;
     top: 0;
+    margin: 1rem;
+}
+.bottom-right-overlay{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 1;
     margin: 1rem;
 }

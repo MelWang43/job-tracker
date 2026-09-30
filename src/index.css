@@ -88,3 +88,32 @@ input {
   border: 1px solid var(--border);
   padding: 0.5rem 1rem;
 }
+
+.tooltip{
+  display: flex;
+}
+
+.tooltip-text{
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: fit-content;
+
+  align-self: center;
+  justify-self: center;
+  pointer-events: none;
+
+  padding: 0.2rem 0.4rem;
+
+  font-size: 0.8rem;
+  transform: translateY(-1.0rem);
+  opacity: 0;
+  transition: all 0.04s ease;
+  background-color: var(--form-bg);
+
+}
+
+.tooltip:hover .tooltip-text{
+  transform: translateY(-1.5rem);
+  opacity: 1;
+}
