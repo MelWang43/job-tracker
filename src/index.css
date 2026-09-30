@@ -2,12 +2,18 @@
   --text: #6b6375;
   --text-h: #08060d;
   --bg: #fff;
-  --border: #e5e4e7;
+  --border: #bbbbbb;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
+  --form-bg: rgba(26, 26, 26, 0.733);
+
+  --green: rgb(55, 173, 55);
+  --red: rgb(173, 55, 55);
+  --orange: rgb(204, 127, 64);
+  --yellow: rgb(235, 218, 71);
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
@@ -52,4 +58,33 @@
 
 body {
   margin: 0;
+}
+
+.label-container{
+  display: flex;
+  gap: 0.3rem;
+}
+
+button {
+  border-radius: 0.3rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.1rem;
+  transition: all 0.2s ease;
+  transform: scale(1);
+}
+
+button:hover{
+  background-color: var(--accent);
+}
+
+button:active{
+  transform: scale(0.9);
+}
+
+input {
+  font-size: 1.1rem;
+  border-radius: 1rem;
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
 }

@@ -1,0 +1,43 @@
+.job-entry{
+    background-color: var(--social-bg);
+    padding: 0.2rem 1rem;
+
+    border: 1px solid rgb(82, 82, 82);
+    border-radius: 1rem;
+
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all ease 0.2s;
+}
+
+.job-entry.spawned{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.job-entry h3{
+    margin-top: 0.9rem;
+    margin-bottom: 0.8rem;
+    font-size: 2rem;
+}
+
+.status-text.applied{
+    color: var(--yellow);
+}
+.status-text.reviewing{
+    color: var(--orange);
+}
+.status-text.rejected{
+    color: var(--red);
+}
+.status-text.accepted{
+    color: var(--green);
+}
+
+.btn-overlay{
+    position: absolute;
+    right: 0;
+    bottom: 1;
+    top: 0;
+    margin: 1rem;
+}
